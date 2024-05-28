@@ -20,7 +20,11 @@ public class StartSong : MonoBehaviour
                 for (int i = 0; i < t.childCount; i++)
                 {
                     Transform kid = t.GetChild(i);
-                    kid.GetComponent<Image>().enabled = false;
+
+                    if (kid.name.Equals("measure(Clone)"))//turn off sub divison bars durting play
+                    {
+                        kid.GetComponent<Image>().enabled = false;
+                    }
 
                     for (int j = 0; j < kid.childCount; j++)
                     {
@@ -41,9 +45,20 @@ public class StartSong : MonoBehaviour
                 //do some math from the noteslider to make it so that when in screen bound
                 //get midpoint in worldspace
                 //keep track of world position and do math
-            }
 
-            transform.localPosition -= new Vector3(0, (float)(tempo * 2.5 * Time.deltaTime), 0);
+                Vector3 worldPos = Camera.main.ScreenToWorldPoint(kid.position);
+                //Debug.Log(kid.name + " : " + worldPos);
+                if (worldPos.y < 10f && worldPos.y > -10f)
+                {
+                    kid.gameObject.SetActive(true);
+                }
+                else
+                {
+                    kid.gameObject.SetActive(false);
+                }
+            }
+            //250 is scroll extra to account for spacing
+            transform.localPosition -= new Vector3(0, (float)((tempo / 60f) * 250f * Time.deltaTime), 0);
         }
 
         else
