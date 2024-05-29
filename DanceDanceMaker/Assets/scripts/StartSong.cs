@@ -8,6 +8,7 @@ public class StartSong : MonoBehaviour
 
     public int tempo;
 
+    public Vector3 initPos = new Vector3(-5, 1500, 0);
    
     private void Update()
     {
@@ -15,6 +16,8 @@ public class StartSong : MonoBehaviour
         {
             if (!turnedOffValidTile)
             {
+                transform.localPosition = initPos;
+
                 Transform t = transform.GetChild(1);
 
                 for (int i = 0; i < t.childCount; i++)
@@ -58,18 +61,20 @@ public class StartSong : MonoBehaviour
                 }
             }
             //250 is scroll extra to account for spacing
-            transform.localPosition -= new Vector3(0, (float)((tempo / 60f) * 250f * Time.deltaTime), 0);
+            transform.localPosition -= new Vector3(0, (float)((tempo / 60f) * 2.5f * Time.deltaTime), 0);
         }
 
         else
         {
             if (turnedOffValidTile)
             {
-                Transform g = transform.GetChild(1);
+                transform.localPosition = initPos;
 
-                for (int i = 0; i < g.childCount; i++)
+                Transform t = transform.GetChild(1);
+
+                for (int i = 0; i < t.childCount; i++)
                 {
-                    Transform kid = g.GetChild(i);
+                    Transform kid = t.GetChild(i);
                     kid.GetComponent<Image>().enabled = true;
 
                     for (int j = 0; j < kid.childCount; j++)
@@ -83,7 +88,26 @@ public class StartSong : MonoBehaviour
                 turnedOffValidTile = false;
             }
 
-            transform.localPosition = new Vector3(-500, 150000, 0);
+            //Transform g = transform.GetChild(1);
+            //
+            //for (int i = 0; i < g.childCount; i++)
+            //{
+            //    Transform kid = g.GetChild(i);
+            //    //do some math from the noteslider to make it so that when in screen bound
+            //    //get midpoint in worldspace
+            //    //keep track of world position and do math
+            //
+            //    Vector3 worldPos = Camera.main.ScreenToWorldPoint(kid.position);
+            //    //Debug.Log(kid.name + " : " + worldPos);
+            //    if (worldPos.y < 2f && worldPos.y > -2f)
+            //    {
+            //        kid.gameObject.SetActive(true);
+            //    }
+            //    else
+            //    {
+            //        kid.gameObject.SetActive(false);
+            //    }
+            //}
         }
     }
 

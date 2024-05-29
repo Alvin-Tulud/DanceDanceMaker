@@ -70,7 +70,7 @@ public class TimeSig : MonoBehaviour
 
                 GameObject m = Instantiate(spawnMeasure, spawnPos, transform.rotation);
                 m.transform.SetParent(Measure_Parent, false);
-                m.transform.localScale = transform.localScale;
+                //m.transform.localScale = transform.localScale;
                 Added_Measures.Add(m);
             }
         }
