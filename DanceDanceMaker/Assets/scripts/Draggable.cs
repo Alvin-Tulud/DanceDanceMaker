@@ -52,13 +52,10 @@ public class Draggable : MonoBehaviour
         // Handle mouse button down event
         if (Input.GetMouseButtonDown(0)) //on click down
         {
-            Debug.Log("click: " + mousePos);
-            Debug.Log(transform.position);
 
             // Check if the object is movable and if the mouse is over it
             if (playerMovable && cardCollider == Physics2D.OverlapPoint(mousePos, ArrowMask))//figure out how to make it so the tiles cant be placed on eachother
             {
-                Debug.Log("overlap");
                 canMove = true;
                 // Create DragTarget and TargetChecker objects
                 CreateDragTargetObjects();
@@ -121,7 +118,7 @@ public class Draggable : MonoBehaviour
         //transform.SetParent(null);
 
         //ROTATE WHEN R IS PRESSED
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) || Input.GetMouseButtonDown(1))
         {
             transform.Rotate(0, 0, 90);
         }

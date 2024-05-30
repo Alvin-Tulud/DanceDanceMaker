@@ -13,7 +13,8 @@ public class StartSong : MonoBehaviour
     private void Update()
     {
         if (isPlaying)
-        {
+        {   
+            //optimization turning off colliders
             if (!turnedOffValidTile)
             {
                 transform.localPosition = initPos;
@@ -40,6 +41,8 @@ public class StartSong : MonoBehaviour
                 turnedOffValidTile = true;
             }
 
+
+            //optimization object pooling
             Transform g = transform.GetChild(1);
 
             for (int i = 0; i < g.childCount; i++)
@@ -51,7 +54,7 @@ public class StartSong : MonoBehaviour
 
                 Vector3 worldPos = Camera.main.ScreenToWorldPoint(kid.position);
                 //Debug.Log(kid.name + " : " + worldPos);
-                if (worldPos.y < 10f && worldPos.y > -10f)
+                if (worldPos.y < -4.8f && worldPos.y > -5.3f)
                 {
                     kid.gameObject.SetActive(true);
                 }
@@ -60,6 +63,9 @@ public class StartSong : MonoBehaviour
                     kid.gameObject.SetActive(false);
                 }
             }
+
+
+            //move the timeline at tempo
             //250 is scroll extra to account for spacing
             transform.localPosition -= new Vector3(0, (float)((tempo / 60f) * 2.5f * Time.deltaTime), 0);
         }
@@ -88,26 +94,28 @@ public class StartSong : MonoBehaviour
                 turnedOffValidTile = false;
             }
 
-            //Transform g = transform.GetChild(1);
-            //
-            //for (int i = 0; i < g.childCount; i++)
-            //{
-            //    Transform kid = g.GetChild(i);
-            //    //do some math from the noteslider to make it so that when in screen bound
-            //    //get midpoint in worldspace
-            //    //keep track of world position and do math
-            //
-            //    Vector3 worldPos = Camera.main.ScreenToWorldPoint(kid.position);
-            //    //Debug.Log(kid.name + " : " + worldPos);
-            //    if (worldPos.y < 2f && worldPos.y > -2f)
-            //    {
-            //        kid.gameObject.SetActive(true);
-            //    }
-            //    else
-            //    {
-            //        kid.gameObject.SetActive(false);
-            //    }
-            //}
+
+            //optimization object pooling
+            Transform g = transform.GetChild(1);
+
+            for (int i = 0; i < g.childCount; i++)
+            {
+                Transform kid = g.GetChild(i);
+                //do some math from the noteslider to make it so that when in screen bound
+                //get midpoint in worldspace
+                //keep track of world position and do math
+
+                Vector3 worldPos = Camera.main.ScreenToWorldPoint(kid.position);
+                //Debug.Log(kid.name + " : " + worldPos);
+                if (worldPos.y < -4.8f && worldPos.y > -5.3f)
+                {
+                    kid.gameObject.SetActive(true);
+                }
+                else
+                {
+                    kid.gameObject.SetActive(false);
+                }
+            }
         }
     }
 
