@@ -34,6 +34,7 @@ public class SaveChart : MonoBehaviour
                         //assign parent name
                         //check notecheck enum value and assign enum value
 
+        
 
 
         string song = JsonUtility.ToJson(data);
