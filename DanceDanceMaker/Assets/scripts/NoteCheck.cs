@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class NoteCheck : MonoBehaviour
 {
+    public enum Color
+    {
+        red, 
+        blue,
+        yellow
+    }
+
+    public Color color;
+
     bool canhit;
     KeyCode hitKey;
     // Start is called before the first frame update
