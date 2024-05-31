@@ -13,7 +13,14 @@ public class StartSong : MonoBehaviour
     private void Update()
     {
         if (isPlaying)
-        {   
+        {
+            GameObject[] hitbar = GameObject.FindGameObjectsWithTag("Hitbar");
+
+            foreach (GameObject go in hitbar)
+            {
+                go.SetActive(true);
+            }
+
             //optimization turning off colliders
             if (!turnedOffValidTile)
             {
@@ -33,6 +40,15 @@ public class StartSong : MonoBehaviour
                     for (int j = 0; j < kid.childCount; j++)
                     {
                         kid.GetChild(j).GetComponent<BoxCollider2D>().enabled = false;
+
+                        if (kid.GetChild(j).childCount != 0)
+                        {
+                            Transform note = kid.GetChild(j).GetChild(0);
+
+                            note.GetComponent<Draggable>().playerMovable = false;
+
+                            note.GetComponent<NoteCheck>().enabled = true;
+                        }
                     }
 
                     kid.gameObject.SetActive(false);
@@ -72,6 +88,14 @@ public class StartSong : MonoBehaviour
 
         else
         {
+            GameObject[] hitbar = GameObject.FindGameObjectsWithTag("Hitbar");
+
+            foreach (GameObject go in hitbar)
+            {
+                go.SetActive(false);
+            }
+
+            //turn editor stuff back on when playing done
             if (turnedOffValidTile)
             {
                 transform.localPosition = initPos;
@@ -86,6 +110,17 @@ public class StartSong : MonoBehaviour
                     for (int j = 0; j < kid.childCount; j++)
                     {
                         kid.GetChild(j).GetComponent<BoxCollider2D>().enabled = true;
+
+                        if (kid.GetChild(j).childCount != 0)
+                        {
+                            Transform note = kid.GetChild(j).GetChild(0);
+
+                            note.gameObject.SetActive(true);
+
+                            note.GetComponent<Draggable>().playerMovable = true;
+
+                            note.GetComponent<NoteCheck>().enabled = false;
+                        }
                     }
 
                     kid.gameObject.SetActive(true);

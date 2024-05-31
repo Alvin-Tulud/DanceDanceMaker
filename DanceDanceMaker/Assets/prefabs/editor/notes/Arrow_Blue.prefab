@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6064135002449133007}
   - component: {fileID: 6258616204734951253}
   - component: {fileID: 4725052811436466119}
+  - component: {fileID: 7061587839436220264}
   m_Layer: 7
   m_Name: Arrow_Blue
   m_TagString: Untagged
@@ -106,7 +107,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -137,3 +138,15 @@ MonoBehaviour:
   playerMovable: 1
   SpawnDragTarget: {fileID: 2578808024786429178, guid: 1723f8ce533fcb741886ffb8f6da1619, type: 3}
   SpawnTargetChecker: {fileID: 3733628939097101360, guid: 0db2de4561951ef4c97d5f7327dfc72e, type: 3}
+--- !u!114 &7061587839436220264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2526005678528692406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d4b139424abc1a41b375cdb551f5a16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
