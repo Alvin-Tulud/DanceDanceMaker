@@ -6,7 +6,6 @@ public class StartSong : MonoBehaviour
     bool isPlaying = false;
     bool turnedOffValidTile = false;
 
-    public int tempo;
 
     public Vector3 initPos = new Vector3(-5, 1500, 0);
    
@@ -14,16 +13,18 @@ public class StartSong : MonoBehaviour
     {
         if (isPlaying)
         {
-            GameObject[] hitbar = GameObject.FindGameObjectsWithTag("Hitbar");
-
-            foreach (GameObject go in hitbar)
-            {
-                go.SetActive(true);
-            }
+            //allow player to hit buttons during play
+            sethitbar(true);
 
             //optimization turning off colliders
             if (!turnedOffValidTile)
             {
+                PlaySong music = GameObject.FindGameObjectWithTag("SongOffset").GetComponent<PlaySong>();
+
+                music.enabled = true;
+                music.Scroll(true);
+
+
                 transform.localPosition = initPos;
 
                 Transform t = transform.GetChild(1);
@@ -58,46 +59,23 @@ public class StartSong : MonoBehaviour
             }
 
 
-            //optimization object pooling
-            Transform g = transform.GetChild(1);
-
-            for (int i = 0; i < g.childCount; i++)
-            {
-                Transform kid = g.GetChild(i);
-                //do some math from the noteslider to make it so that when in screen bound
-                //get midpoint in worldspace
-                //keep track of world position and do math
-
-                Vector3 worldPos = Camera.main.ScreenToWorldPoint(kid.position);
-                //Debug.Log(kid.name + " : " + worldPos);
-                if (worldPos.y < -4.8f && worldPos.y > -5.3f)
-                {
-                    kid.gameObject.SetActive(true);
-                }
-                else
-                {
-                    kid.gameObject.SetActive(false);
-                }
-            }
-
-
-            //move the timeline at tempo
-            //250 is scroll extra to account for spacing
-            transform.localPosition -= new Vector3(0, (float)((tempo / 60f) * 2.5f * Time.deltaTime), 0);
+            measurePooling();
         }
 
         else
         {
-            GameObject[] hitbar = GameObject.FindGameObjectsWithTag("Hitbar");
-
-            foreach (GameObject go in hitbar)
-            {
-                go.SetActive(false);
-            }
+            sethitbar(false);
 
             //turn editor stuff back on when playing done
             if (turnedOffValidTile)
             {
+                PlaySong music = GameObject.FindGameObjectWithTag("SongOffset").GetComponent<PlaySong>();
+
+                music.endSond();
+                music.enabled = false;
+                music.Scroll(false);
+
+
                 transform.localPosition = initPos;
 
                 Transform t = transform.GetChild(1);
@@ -130,29 +108,44 @@ public class StartSong : MonoBehaviour
             }
 
 
-            //optimization object pooling
-            Transform g = transform.GetChild(1);
-
-            for (int i = 0; i < g.childCount; i++)
-            {
-                Transform kid = g.GetChild(i);
-                //do some math from the noteslider to make it so that when in screen bound
-                //get midpoint in worldspace
-                //keep track of world position and do math
-
-                Vector3 worldPos = Camera.main.ScreenToWorldPoint(kid.position);
-                //Debug.Log(kid.name + " : " + worldPos);
-                if (worldPos.y < -4.8f && worldPos.y > -5.3f)
-                {
-                    kid.gameObject.SetActive(true);
-                }
-                else
-                {
-                    kid.gameObject.SetActive(false);
-                }
-            }
+            measurePooling();
         }
     }
 
     public void setPlaying(bool playing) { isPlaying = playing; }
+
+    void sethitbar(bool state)
+    {
+        GameObject[] hitbar = GameObject.FindGameObjectsWithTag("Hitbar");
+
+        foreach (GameObject go in hitbar)
+        {
+            go.GetComponent<HitbarControl>().enabled = state;
+        }
+    }
+
+    void measurePooling()
+    {
+        //optimization object pooling
+        Transform g = transform.GetChild(1);
+
+        for (int i = 0; i < g.childCount; i++)
+        {
+            Transform kid = g.GetChild(i);
+            //do some math from the noteslider to make it so that when in screen bound
+            //get midpoint in worldspace
+            //keep track of world position and do math
+
+            Vector3 worldPos = Camera.main.ScreenToWorldPoint(kid.position);
+            //Debug.Log(kid.name + " : " + worldPos);
+            if (worldPos.y < -4.8f && worldPos.y > -5.3f)
+            {
+                kid.gameObject.SetActive(true);
+            }
+            else
+            {
+                kid.gameObject.SetActive(false);
+            }
+        }
+    }
 }
