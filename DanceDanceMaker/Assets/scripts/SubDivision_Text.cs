@@ -33,6 +33,14 @@ public class SubDivision_Text : MonoBehaviour
         {
             subdivision.text = "Subdivision: 1/8";
         }
+        else if (count == 7)
+        {
+            subdivision.text = "Subdivision: 1/12";
+        }
+        else if (count == 8)
+        {
+            subdivision.text = "Subdivision: 1/16";
+        }
         else
         {
             subdivision.text = "Subdivision: 1/" + count;
