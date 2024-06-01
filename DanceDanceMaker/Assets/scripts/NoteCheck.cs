@@ -6,7 +6,7 @@ public class NoteCheck : MonoBehaviour
 {
     public enum Color
     {
-        red, 
+        red = 0, 
         blue,
         yellow
     }
