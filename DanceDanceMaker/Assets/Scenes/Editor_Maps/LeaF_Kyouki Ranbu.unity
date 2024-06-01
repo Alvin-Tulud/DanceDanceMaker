@@ -164,12 +164,41 @@ PrefabInstance:
       value: 230
       objectReference: {fileID: 0}
     - target: {fileID: 4958644786527025822, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
+      propertyPath: filepath
+      value: C:/Users/HP Owner/AppData/LocalLow/DefaultCompany/DanceDanceMaker/LeaF_Kyouki
+        Ranbu.json
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958644786527025822, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
+      propertyPath: song_name
+      value: Kyouki Ranbu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958644786527025822, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
       propertyPath: data.tempo
       value: 230
       objectReference: {fileID: 0}
     - target: {fileID: 4958644786527025822, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
+      propertyPath: artist_name
+      value: LeaF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958644786527025822, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
+      propertyPath: readsong_name
+      value: Kyouki Ranbu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958644786527025822, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
       propertyPath: data.song_name
       value: Kyouki_Ranbu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958644786527025822, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
+      propertyPath: writesong_name
+      value: Kyouki Ranbu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958644786527025822, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
+      propertyPath: readartist_name
+      value: LeaF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958644786527025822, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
+      propertyPath: writeData.tempo
+      value: 230
       objectReference: {fileID: 0}
     - target: {fileID: 4958644786527025822, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
       propertyPath: data.artist_name
@@ -180,7 +209,27 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4958644786527025822, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
+      propertyPath: writeartist_name
+      value: LeaF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958644786527025822, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
+      propertyPath: writeData.song_name
+      value: Kyouki Ranbu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958644786527025822, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
       propertyPath: data.difficulty_name
+      value: Alvin's Insane
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958644786527025822, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
+      propertyPath: writeData.artist_name
+      value: LeaF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958644786527025822, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
+      propertyPath: writeData.subdivision
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958644786527025822, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
+      propertyPath: writeData.difficulty_name
       value: Alvin's Insane
       objectReference: {fileID: 0}
     - target: {fileID: 5682561646369469560, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
@@ -193,7 +242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7654930634404929536, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1488.4
+      value: -1487
       objectReference: {fileID: 0}
     - target: {fileID: 7744321271752457391, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
       propertyPath: m_audioClip

@@ -42,6 +42,14 @@ public class TimeSig : MonoBehaviour
         {
             notesbetween = 8;
         }
+        else if (count == 7)
+        {
+            notesbetween = 12;
+        }
+        else if (count == 8)
+        {
+            notesbetween = 16;
+        }
         else
         {
             notesbetween = count;

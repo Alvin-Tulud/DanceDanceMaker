@@ -239,6 +239,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4958644786527025822, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
+      propertyPath: writeData.tempo
+      value: 102.461
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958644786527025822, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
+      propertyPath: writeData.song_name
+      value: Mimi's Delivery Service
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958644786527025822, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
+      propertyPath: writeData.artist_name
+      value: GoodKid
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958644786527025822, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
+      propertyPath: writeData.subdivision
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958644786527025822, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
+      propertyPath: writeData.difficulty_name
+      value: Alvin's Insane
+      objectReference: {fileID: 0}
     - target: {fileID: 5682561646369469560, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

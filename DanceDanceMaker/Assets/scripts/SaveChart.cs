@@ -7,11 +7,18 @@ public class SaveChart : MonoBehaviour
 {
     public Transform Measures;
 
-    public SongData data = new SongData();
+    public SongData writeData = new SongData();
+    public SongData readData = new SongData();
+    string filepath;
+
+    public List<GameObject> Arrows = new List<GameObject>();
+
+    public TimeSig TimeSig;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        filepath = Application.persistentDataPath + "/" + writeData.artist_name + "_" + writeData.song_name + "_" + writeData.difficulty_name + ".json";
     }
 
     // Update is called once per frame
@@ -28,13 +35,29 @@ public class SaveChart : MonoBehaviour
 
 
         //iterate through measures
-            //within each measure
-                //check each note spot
-                    //if theres a child
-                        //assign parent name
-                        //check notecheck enum value and assign enum value
+        //within each measure
+        //check each note spot
+        //if theres a child
+        //assign parent name
+        //check notecheck enum value and assign enum value
 
-        data.notes.Clear();
+        write();
+
+        string song = JsonUtility.ToJson(writeData);
+        System.IO.File.WriteAllText(filepath, song);
+    }
+
+    public void loadData()
+    {
+        string song = System.IO.File.ReadAllText(filepath);
+        readData = JsonUtility.FromJson<SongData>(song);
+
+        read();
+    }
+
+    public void write()
+    {
+        writeData.notes.Clear();
 
         //for each measure
         for (int i = 0; i < Measures.childCount; i++)
@@ -53,17 +76,45 @@ public class SaveChart : MonoBehaviour
 
                     beat.measurePos = measure.transform.localPosition;
                     beat.parentNum = j;
-                    beat.color = (note.Color) noteSpot.GetChild(0).GetComponent<NoteCheck>().color;
+                    beat.color = (note.Color)noteSpot.GetChild(0).GetComponent<NoteCheck>().color;
 
-                    data.notes.Add(beat);
+                    writeData.notes.Add(beat);
                 }
             }
         }
+    }
 
+    public void read()
+    {
+        //spawn in the subdivision
+        TimeSig.slider.value = readData.subdivision;
 
-        string song = JsonUtility.ToJson(data);
-        Debug.Log(Application.persistentDataPath + "/" + data.artist_name + "_" + data.song_name + ".json");
-        System.IO.File.WriteAllText(Application.persistentDataPath + "/" + data.artist_name + "_" + data.song_name + ".json", song);
+        //spawn the notes onto the measures
+        if (readData.notes.Count != 0)
+        {
+            //for each measure and while less than notes that are saved
+            for (int i = 0; i < Measures.childCount; i++)
+            {
+                Transform measure = Measures.GetChild(i).transform;
+
+                for (int readNoteIter = 0; readNoteIter < readData.notes.Count; readNoteIter++)
+                {
+                    //figure out of multiple notes are on same measure
+                    if (measure.localPosition == readData.notes[readNoteIter].measurePos)
+                    {
+                        Transform parent = measure.GetChild(readData.notes[readNoteIter].parentNum);
+
+                        GameObject arrow = Instantiate(Arrows[(int)readData.notes[readNoteIter].color]);
+
+                        arrow.transform.position = Vector3.zero;
+                        arrow.GetComponent<NoteCheck>().enabled = false;
+                        arrow.transform.SetParent(parent, false);
+
+                        readNoteIter++;
+                    }
+                }
+            }
+        }
     }
 }
 
