@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Editor_Maps/GoodKid_Mimi's.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Menus/Main_Menu.unity
+    guid: 6aa38bb2a3f562447a08883169ff845d
   m_configObjects: {}
