@@ -120,7 +120,7 @@ public class SaveChart : MonoBehaviour
 
     public void OpenFileBrowser()
     {
-
+        string[] paths = StandaloneFileBrowser.OpenFilePanel("Open File", Application.persistentDataPath, "json", false);
     }
 }
 
