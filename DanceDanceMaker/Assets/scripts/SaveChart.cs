@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
+using SFB;
 
 public class SaveChart : MonoBehaviour
 {
@@ -115,6 +116,11 @@ public class SaveChart : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void OpenFileBrowser()
+    {
+
     }
 }
 
