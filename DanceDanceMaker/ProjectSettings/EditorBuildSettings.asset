@@ -6,6 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Editor_Maps/TVGirl_Birds Dont Sing.unity
+    guid: fa9feaefcb4adac4f8ee033f3fbaa718
+  - enabled: 1
+    path: Assets/Scenes/Editor_Maps/GlassBeach_ColdWeather.unity
+    guid: 5b10c700f4fe98c4eb5ab9accc70aa94
+  - enabled: 1
     path: Assets/Scenes/Menus/Main_Menu.unity
     guid: 6aa38bb2a3f562447a08883169ff845d
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
