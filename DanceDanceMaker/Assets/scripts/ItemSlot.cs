@@ -22,7 +22,7 @@ public class ItemSlot : MonoBehaviour
     void Update()
     {
         //adds tile if none is present
-        RaycastHit2D checkTile = Physics2D.Raycast(transform.position, transform.forward, 0.1f, ArrowLayerMask);
+        RaycastHit2D checkTile = Physics2D.CircleCast(transform.position, 0.1f, Vector2.zero, ArrowLayerMask);
 
         if (!checkTile)
         {
