@@ -22,7 +22,7 @@ public class ItemSlot : MonoBehaviour
     void Update()
     {
         //adds tile if none is present
-        RaycastHit2D checkTile = Physics2D.CircleCast(transform.position, 0.1f, Vector2.zero, ArrowLayerMask);
+        RaycastHit2D checkTile = Physics2D.Raycast(transform.position,Vector2.down, 0.5f, ArrowLayerMask);
 
         if (!checkTile)
         {
@@ -37,6 +37,10 @@ public class ItemSlot : MonoBehaviour
         g.transform.position = Vector3.zero;
         g.GetComponent<NoteCheck>().enabled = false;
         g.transform.SetParent(transform, false);
+
+        g.transform.localPosition = Vector3.zero;
+
+        Debug.Log(g.transform.localPosition);
     }
 }
 

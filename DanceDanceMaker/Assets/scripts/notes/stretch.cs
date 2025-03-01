@@ -7,33 +7,23 @@ public class stretch : MonoBehaviour
     private Transform arrowChildPos;
     private Transform arrowParentPos;
     private Transform linePos;
-
-    private BoxCollider2D lineCollider;
-    private LineRenderer line;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         arrowChildPos = transform;
         arrowParentPos = transform.parent;
         linePos = transform.parent.GetChild(0);
-
-        lineCollider = transform.parent.GetChild(0).GetComponent<BoxCollider2D>();
-        line = transform.parent.GetChild(0).GetComponent<LineRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 tempSet = new Vector3(arrowParentPos.position.x, (arrowParentPos.position.y + arrowChildPos.position.y) / 2, 0);
-        //Debug.Log(arrowParentPos.position + " " + arrowChildPos.position);
-        linePos.position = tempSet;
+        Vector3 tempSet = new Vector3(0, (arrowParentPos.localPosition.y + arrowChildPos.localPosition.y) / 2, 0);
+        Debug.Log(arrowParentPos.localPosition + " " + arrowChildPos.localPosition);
+        linePos.localPosition = tempSet;
 
-        //Debug.Log(tempSet);
-        
-        line.SetPosition(0, arrowParentPos.position);
-        Vector3 tempSetLine = new Vector3(arrowParentPos.position.x, arrowChildPos.position.y, 0);
-        line.SetPosition(1, tempSetLine);
+        Debug.Log(tempSet);
 
-        lineCollider.size = new Vector2(1, Mathf.Abs(arrowChildPos.position.y - arrowParentPos.position.y));
+        linePos.localScale = new Vector3(1, Mathf.Abs(arrowChildPos.localPosition.y - arrowParentPos.localPosition.y), 0);
     }
 }
