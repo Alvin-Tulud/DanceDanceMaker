@@ -52,10 +52,10 @@ public class Draggable : MonoBehaviour
         // Handle mouse button down event
         if (Input.GetMouseButtonDown(0)) //on click down
         {
-
             // Check if the object is movable and if the mouse is over it
             if (playerMovable && cardCollider == Physics2D.OverlapPoint(mousePos, ArrowMask))//figure out how to make it so the tiles cant be placed on eachother
             {
+                Debug.Log("found obj" + transform.name);
                 canMove = true;
                 // Create DragTarget and TargetChecker objects
                 CreateDragTargetObjects();
@@ -86,7 +86,7 @@ public class Draggable : MonoBehaviour
         g = Instantiate(SpawnTargetChecker, transform.position, transform.rotation); //Creates TargetChecker
         g.transform.SetParent(transform, false);
         g.transform.position = Vector3.zero;
-        //Debug.Log("IM TRANSFORMING");
+        Debug.Log("IM TRANSFORMING");
         TargetChecker = g;
 
         // Initialize collision logic for targetchecker here
@@ -132,8 +132,8 @@ public class Draggable : MonoBehaviour
 
         // Round TargetChecker's position to the nearest grid item
         TargetChecker.transform.position = new Vector3(mousePos.x, mousePos.y, 0); //1. Moves TargetChecker and rounds its pos to the tile grid
-        //Debug.Log("targetChecker: " + TargetChecker.transform.position);
-        //Debug.Log("DragTarget: " + DragTarget.transform.position);
+        Debug.Log("targetChecker: " + TargetChecker.transform.position + " " + transform.name);
+        Debug.Log("DragTarget: " + DragTarget.transform.position + " " + transform.name);
 
         // Raycast check
         // Temporarily move tile layer to ignore raycast

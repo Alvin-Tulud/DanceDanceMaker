@@ -223,6 +223,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Editor
       objectReference: {fileID: 0}
+    - target: {fileID: 1181805685264468853, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1618206508}
+    - target: {fileID: 1181805685264468853, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: playSong
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181805685264468853, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ConductorClass, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2873727874827347526, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
@@ -285,7 +297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7654930634404929536, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1490.9
+      value: -1501.5
       objectReference: {fileID: 0}
     - target: {fileID: 7744321271752457391, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
       propertyPath: m_Resource
@@ -345,6 +357,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
+--- !u!114 &1618206508 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4794662985090967406, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
+  m_PrefabInstance: {fileID: 1426146385}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06349d44ea1826d4c8e695dbd306c807, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

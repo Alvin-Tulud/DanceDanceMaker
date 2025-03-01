@@ -19,7 +19,7 @@ public class StartSong : MonoBehaviour
             //optimization turning off colliders
             if (!turnedOffValidTile)
             {
-                PlaySong music = GameObject.FindGameObjectWithTag("SongOffset").GetComponent<PlaySong>();
+                ConductorClass music = GameObject.FindGameObjectWithTag("SongOffset").GetComponent<ConductorClass>();
 
                 music.enabled = true;
                 music.Scroll(true);
@@ -69,7 +69,7 @@ public class StartSong : MonoBehaviour
             //turn editor stuff back on when playing done
             if (turnedOffValidTile)
             {
-                PlaySong music = GameObject.FindGameObjectWithTag("SongOffset").GetComponent<PlaySong>();
+                ConductorClass music = GameObject.FindGameObjectWithTag("SongOffset").GetComponent<ConductorClass>();
 
                 music.endSond();
                 music.enabled = false;

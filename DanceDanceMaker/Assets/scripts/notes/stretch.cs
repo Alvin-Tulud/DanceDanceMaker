@@ -25,15 +25,15 @@ public class stretch : MonoBehaviour
     void Update()
     {
         Vector3 tempSet = new Vector3(arrowParentPos.position.x, (arrowParentPos.position.y + arrowChildPos.position.y) / 2, 0);
-        Debug.Log(arrowParentPos.position + " " + arrowChildPos.position);
+        //Debug.Log(arrowParentPos.position + " " + arrowChildPos.position);
         linePos.position = tempSet;
 
-        Debug.Log(tempSet);
+        //Debug.Log(tempSet);
         
         line.SetPosition(0, arrowParentPos.position);
         Vector3 tempSetLine = new Vector3(arrowParentPos.position.x, arrowChildPos.position.y, 0);
         line.SetPosition(1, tempSetLine);
 
-        lineCollider.size = new Vector2(1, arrowChildPos.position.y - arrowParentPos.position.y);
+        lineCollider.size = new Vector2(1, Mathf.Abs(arrowChildPos.position.y - arrowParentPos.position.y));
     }
 }

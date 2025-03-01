@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlaySong : MonoBehaviour
+public class ConductorClass : MonoBehaviour
 {
     AudioSource Song;
     Vector3 offset;
@@ -39,7 +39,7 @@ public class PlaySong : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (gameObject.GetComponent<PlaySong>().enabled && collision.CompareTag("Hitbar"))
+        if (gameObject.GetComponent<ConductorClass>().enabled && collision.CompareTag("Hitbar"))
         {
             Song.Play();
             startedmusic = true;

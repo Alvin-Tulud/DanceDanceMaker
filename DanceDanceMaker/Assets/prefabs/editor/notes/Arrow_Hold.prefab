@@ -83,8 +83,8 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Positions:
-  - {x: 6.08, y: -0.03, z: 0}
-  - {x: 6.08, y: 2.08, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -354,7 +354,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2685036798767033162}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -425,33 +425,33 @@ CompositeCollider2D:
   - m_Collider: {fileID: 3702088595973365245}
     m_ColliderPaths:
     - - X: 5000000
-        Y: 15100000
+        Y: 15100098
       - X: -5000000
-        Y: 15100000
+        Y: 15100098
       - X: -5000000
-        Y: 5100000
+        Y: 5100097
       - X: 5000000
-        Y: 5100000
+        Y: 5100097
   - m_Collider: {fileID: 13655469113881595}
     m_ColliderPaths:
     - - X: 5000000
-        Y: 25800000
+        Y: 25800170
       - X: -5000000
-        Y: 25800000
+        Y: 25800170
       - X: -5000000
-        Y: 15799999
+        Y: 15800171
       - X: 5000000
-        Y: 15799999
+        Y: 15800171
   m_CompositePaths:
     m_Paths:
-    - - {x: 0.4999707, y: 1.5799999}
-      - {x: 0.4999707, y: 2.58}
-      - {x: -0.5, y: 2.5799708}
-      - {x: -0.4999707, y: 1.5799999}
-    - - {x: 0.4999707, y: 0.51}
-      - {x: 0.4999707, y: 1.51}
-      - {x: -0.5, y: 1.5099707}
-      - {x: -0.4999707, y: 0.51}
+    - - {x: 0.4999707, y: 1.5800171}
+      - {x: 0.4999707, y: 2.580017}
+      - {x: -0.5, y: 2.5799875}
+      - {x: -0.4999707, y: 1.5800171}
+    - - {x: 0.4999707, y: 0.5100097}
+      - {x: 0.4999707, y: 1.5100098}
+      - {x: -0.5, y: 1.5099806}
+      - {x: -0.4999707, y: 0.5100097}
     - - {x: 0.4999707, y: -0.5}
       - {x: 0.4999707, y: 0.5}
       - {x: -0.5, y: 0.4999707}
