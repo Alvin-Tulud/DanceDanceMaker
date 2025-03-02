@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.50980395}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -350,6 +350,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83ccd64c262f437408100395a5e1d51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrowChildPos: {fileID: 0}
+  arrowParentPos: {fileID: 0}
+  linePos: {fileID: 0}
 --- !u!224 &9196652278973585670 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2975334889600910760, guid: 2ab12c15aac0ff346bf2c89ee1a99787, type: 3}

@@ -116,12 +116,6 @@ public class Draggable : MonoBehaviour
         transform.position = new Vector3(mousePos.x, mousePos.y, -1); //moves tile to mouse pos
         transform.localScale = Vector3.one * 1.2f;
         //transform.SetParent(null);
-
-        //ROTATE WHEN R IS PRESSED
-        if (Input.GetKeyDown(KeyCode.R) || Input.GetMouseButtonDown(1))
-        {
-            transform.Rotate(0, 0, 90);
-        }
     }
 
     // Check the validity of the tile's position
@@ -132,8 +126,8 @@ public class Draggable : MonoBehaviour
 
         // Round TargetChecker's position to the nearest grid item
         TargetChecker.transform.position = new Vector3(mousePos.x, mousePos.y, 0); //1. Moves TargetChecker and rounds its pos to the tile grid
-        Debug.Log("targetChecker: " + TargetChecker.transform.position + " " + transform.name);
-        Debug.Log("DragTarget: " + DragTarget.transform.position + " " + transform.name);
+        //Debug.Log("targetChecker: " + TargetChecker.transform.position + " " + transform.name);
+        //Debug.Log("DragTarget: " + DragTarget.transform.position + " " + transform.name);
 
         // Raycast check
         // Temporarily move tile layer to ignore raycast
