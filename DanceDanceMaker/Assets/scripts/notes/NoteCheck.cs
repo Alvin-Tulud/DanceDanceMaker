@@ -40,7 +40,7 @@ public class NoteCheck : MonoBehaviour
         if (collision.CompareTag("Hitbar"))
         {
             canhit = true;
-            hitKey = collision.GetComponent<HitbarControl>().input;
+            //hitKey = collision.GetComponent<HitbarControl>().input;
         }
     }
 

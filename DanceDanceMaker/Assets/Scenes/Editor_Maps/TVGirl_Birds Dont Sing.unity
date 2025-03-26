@@ -211,6 +211,69 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &516753018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6249004966680832973, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
+  m_PrefabInstance: {fileID: 1426146385}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &516753022 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9019207256175012628, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
+  m_PrefabInstance: {fileID: 1426146385}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516753018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132789cedeb4388499c8d623a36f339a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &516753026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516753018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: ab2e1758851b1934f9357af02b9d364c, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 516753022}
+        m_TargetAssemblyTypeName: HitbarControl, Assembly-CSharp
+        m_MethodName: getDirection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 674c0ff5-c97a-4c30-8c8f-4a0f528860e5
+    m_ActionName: 'Default/New action1[/SHANWAN USB DancePad/trigger,/SHANWAN USB
+      DancePad/button2,/SHANWAN USB DancePad/button3,/SHANWAN USB DancePad/button4]'
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: DDRPad
+  m_DefaultActionMap: Default
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &1426146385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -695,7 +758,10 @@ PrefabInstance:
     - {fileID: 410275219893898911, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
     - {fileID: 6973332447460105558, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6249004966680832973, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
+      insertIndex: 5
+      addedObject: {fileID: 516753026}
   m_SourcePrefab: {fileID: 100100000, guid: 0d2980965f9812d4481dd60aafdd1940, type: 3}
 --- !u!114 &1618206508 stripped
 MonoBehaviour:
