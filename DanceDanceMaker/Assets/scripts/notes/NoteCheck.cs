@@ -14,42 +14,32 @@ public class NoteCheck : MonoBehaviour
     public Color color;
 
     bool canhit;
-    KeyCode hitKey;
     // Start is called before the first frame update
     private void Awake()
     {
         canhit = false;
-        hitKey = KeyCode.None;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (canhit)
-        {
-            if (Input.GetKeyDown(hitKey))
-            {
-                Debug.Log("hit: " + hitKey.ToString());
-                gameObject.SetActive(false);
-            }
-        }
-    }
-
+    //checks if it is in the area of hitbar to be able to be hit by player
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Hitbar"))
         {
             canhit = true;
-            //hitKey = collision.GetComponent<HitbarControl>().input;
         }
     }
-
+   
+    //check if it exitted the area whre player can hit arrows
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Hitbar"))
         {
             canhit = false;
-            hitKey = KeyCode.None;
         }
+    }
+
+    public bool getCanHit()
+    {
+        return canhit;
     }
 }

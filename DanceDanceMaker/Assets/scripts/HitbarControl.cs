@@ -19,6 +19,8 @@ public class HitbarControl : MonoBehaviour
 
     }
 
+    //add functions into here to detect notes 
+    //call from notecheck script
     public void getDirection(InputAction.CallbackContext context)
     {
         hitsound.Play();
