@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,13 +9,34 @@ public class NoteCheck : MonoBehaviour
     {
         red = 0, 
         blue,
-        yellow
+        yellow,
+        held,
+        heldOther
     }
 
     public Color color;
 
+    public int ID;
+
     bool canhit;
+
+    public GameObject otherNote;
     // Start is called before the first frame update
+    private void Start()
+    {
+        if (otherNote == null)
+        {
+            ID = NoteID.noteID;
+            //Debug.Log(ID + " " + gameObject.name);
+            NoteID.noteID++;
+            //Debug.Log(NoteID.noteID + " " + gameObject.name);
+        }
+        else
+        {
+            otherNote.GetComponent<NoteCheck>().ID = ID;
+        }
+    }
+
     private void Awake()
     {
         canhit = false;

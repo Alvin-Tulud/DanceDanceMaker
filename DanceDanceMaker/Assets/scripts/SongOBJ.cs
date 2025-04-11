@@ -5,5 +5,6 @@ using UnityEngine;
 public class SongOBJ : ScriptableObject
 {
     public AudioClip song;
-
+    public float bpm;
+    public Vector3 songposition;
 }

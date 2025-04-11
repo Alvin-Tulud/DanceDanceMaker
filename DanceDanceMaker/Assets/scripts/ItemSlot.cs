@@ -35,7 +35,7 @@ public class ItemSlot : MonoBehaviour
     {
         GameObject g = Instantiate(Tile_To_Spawn, transform.position, transform.rotation);
         g.transform.position = Vector3.zero;
-        g.GetComponent<NoteCheck>().enabled = false;
+        g.GetComponent<NoteCheck>().enabled = true;
         g.transform.SetParent(transform, false);
 
         g.transform.localPosition = Vector3.zero;
