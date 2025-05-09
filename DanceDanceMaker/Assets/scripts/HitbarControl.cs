@@ -22,6 +22,18 @@ public class HitbarControl : MonoBehaviour
         if (canInput)
         {
             Debug.Log("you did a thing up");
+
+            RaycastHit2D[] hit;
+
+            hit = Physics2D.CircleCastAll(arrows[2].transform.position, 0.25f, Vector2.zero);
+
+            foreach(RaycastHit2D hit2 in hit)
+            {
+                if (hit2.transform.CompareTag("Note"))
+                {
+                    hit2.transform.gameObject.SetActive(false);
+                }
+            }
         }
     }
 
@@ -30,6 +42,18 @@ public class HitbarControl : MonoBehaviour
         if (canInput)
         {
             Debug.Log("you did a thing up");
+
+            RaycastHit2D[] hit;
+
+            hit = Physics2D.CircleCastAll(arrows[1].transform.position, 0.25f, Vector2.zero);
+
+            foreach (RaycastHit2D hit2 in hit)
+            {
+                if (hit2.transform.CompareTag("Note"))
+                {
+                    hit2.transform.gameObject.SetActive(false);
+                }
+            }
         }
     }
     public void getLeft(InputAction.CallbackContext context)
@@ -37,6 +61,18 @@ public class HitbarControl : MonoBehaviour
         if (canInput)
         {
             Debug.Log("you did a thing up");
+
+            RaycastHit2D[] hit;
+
+            hit = Physics2D.CircleCastAll(arrows[0].transform.position, 0.25f, Vector2.zero);
+
+            foreach (RaycastHit2D hit2 in hit)
+            {
+                if (hit2.transform.CompareTag("Note"))
+                {
+                    hit2.transform.gameObject.SetActive(false);
+                }
+            }
         }
     }
     public void getRight(InputAction.CallbackContext context)
@@ -44,6 +80,18 @@ public class HitbarControl : MonoBehaviour
         if (canInput)
         {
             Debug.Log("you did a thing up");
+
+            RaycastHit2D[] hit;
+
+            hit = Physics2D.CircleCastAll(arrows[3].transform.position, 0.25f, Vector2.zero);
+
+            foreach (RaycastHit2D hit2 in hit)
+            {
+                if (hit2.transform.CompareTag("Note"))
+                {
+                    hit2.transform.gameObject.SetActive(false);
+                }
+            }
         }
     }
 

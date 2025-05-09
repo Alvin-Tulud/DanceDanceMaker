@@ -72,6 +72,8 @@ public class SaveChart : MonoBehaviour
                     beat.parentNum = j;
                     beat.color = (note.Color)noteSpot.GetChild(0).GetComponent<NoteCheck>().color;
 
+                    Debug.Log("found a note: " + noteSpot.GetChild(0).transform.position + " : " + beat.parentNum);
+
                     writeData.notes.Add(beat);
                 }
             }
@@ -91,10 +93,11 @@ public class SaveChart : MonoBehaviour
             {
                 Transform measure = Measures.GetChild(i).transform;
 
+                //iterates through every notes
                 for (int readNoteIter = 0; readNoteIter < readData.notes.Count; readNoteIter++)
                 {
-                    //figure out of multiple notes are on same measure
-                    if (measure.localPosition == readData.notes[readNoteIter].measurePos)
+                    //if note is on measure spawn it
+                    if (readData.notes[readNoteIter].measurePos == measure.localPosition)
                     {
                         Transform parent = measure.GetChild(readData.notes[readNoteIter].parentNum);
 
@@ -103,8 +106,6 @@ public class SaveChart : MonoBehaviour
                         arrow.transform.SetParent(parent, false);
                         arrow.transform.localPosition = Vector3.zero;
                         arrow.GetComponent<NoteCheck>().enabled = false;
-
-                        readNoteIter++;
                     }
                 }
             }

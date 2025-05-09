@@ -40,7 +40,7 @@ public class ItemSlot : MonoBehaviour
 
         g.transform.localPosition = Vector3.zero;
 
-        Debug.Log(g.transform.localPosition);
+        //Debug.Log(g.transform.localPosition);
     }
 }
 
