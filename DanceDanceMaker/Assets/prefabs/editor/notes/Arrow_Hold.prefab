@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 4538223146236126581}
   m_Layer: 7
   m_Name: Arrow_Hold
-  m_TagString: Untagged
+  m_TagString: Note
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,6 +229,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: 1
+  ID: 0
+  otherNote: {fileID: 0}
 --- !u!1001 &6263260050760719534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -240,6 +242,10 @@ PrefabInstance:
     - target: {fileID: 2526005678528692406, guid: 2ab12c15aac0ff346bf2c89ee1a99787, type: 3}
       propertyPath: m_Name
       value: Arrow_Blue (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2526005678528692406, guid: 2ab12c15aac0ff346bf2c89ee1a99787, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2975334889600910760, guid: 2ab12c15aac0ff346bf2c89ee1a99787, type: 3}
       propertyPath: m_Pivot.x

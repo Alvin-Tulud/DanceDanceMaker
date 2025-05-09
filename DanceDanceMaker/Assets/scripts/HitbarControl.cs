@@ -6,24 +6,49 @@ using UnityEngine.InputSystem;
 public class HitbarControl : MonoBehaviour
 {
     //https://freesound.org/people/thefsoundman/sounds/118513/ hitsound source
-    AudioSource hitsound;
-    // Start is called before the first frame update
-    private void Awake()
-    {
-        hitsound = GetComponent<AudioSource>();
-    }
+    public GameObject[] arrows;
 
-    // Update is called once per frame
-    void Update()
-    {
+    private bool canInput;
 
+    private void Start()
+    {
+        canInput = false;
     }
 
     //add functions into here to detect notes 
     //call from notecheck script
-    public void getDirection(InputAction.CallbackContext context)
+    public void getUp(InputAction.CallbackContext context)
     {
-        hitsound.Play();
-        Debug.Log("you did a thing " + context.ReadValue<Vector2>());
+        if (canInput)
+        {
+            Debug.Log("you did a thing up");
+        }
+    }
+
+    public void getDown(InputAction.CallbackContext context)
+    {
+        if (canInput)
+        {
+            Debug.Log("you did a thing up");
+        }
+    }
+    public void getLeft(InputAction.CallbackContext context)
+    {
+        if (canInput)
+        {
+            Debug.Log("you did a thing up");
+        }
+    }
+    public void getRight(InputAction.CallbackContext context)
+    {
+        if (canInput)
+        {
+            Debug.Log("you did a thing up");
+        }
+    }
+
+    public void setCanInput(bool canInput)
+    {
+        this.canInput = canInput;
     }
 }

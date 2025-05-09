@@ -18,6 +18,7 @@ public class SaveChart : MonoBehaviour
     void Awake()
     {
         filepath = Application.persistentDataPath + "/" + writeData.artist_name + "_" + writeData.song_name + "_" + writeData.difficulty_name + ".json";
+        Debug.Log(filepath);
     }
 
     public void saveData()
@@ -99,9 +100,9 @@ public class SaveChart : MonoBehaviour
 
                         GameObject arrow = Instantiate(Arrows[(int)readData.notes[readNoteIter].color]);
 
-                        arrow.transform.position = Vector3.zero;
-                        arrow.GetComponent<NoteCheck>().enabled = false;
                         arrow.transform.SetParent(parent, false);
+                        arrow.transform.localPosition = Vector3.zero;
+                        arrow.GetComponent<NoteCheck>().enabled = false;
 
                         readNoteIter++;
                     }

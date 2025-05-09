@@ -8,7 +8,16 @@ public class StartSong : MonoBehaviour
 
 
     public Vector3 initPos = new Vector3(-5, 1500, 0);
-   
+
+    GameObject hitbar;
+
+    private void Start()
+    {
+        hitbar = GameObject.FindGameObjectWithTag("Hitbar");
+
+        sethitbar(false);
+    }
+
     private void Update()
     {
         if (isPlaying)
@@ -116,12 +125,7 @@ public class StartSong : MonoBehaviour
 
     void sethitbar(bool state)
     {
-        GameObject[] hitbar = GameObject.FindGameObjectsWithTag("Hitbar");
-
-        foreach (GameObject go in hitbar)
-        {
-            go.GetComponent<HitbarControl>().enabled = state;
-        }
+        hitbar.GetComponent<HitbarControl>().setCanInput(state);
     }
 
     void measurePooling()

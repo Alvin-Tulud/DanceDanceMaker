@@ -6,70 +6,86 @@
             "id": "6e393084-a413-4425-af72-5aeddb9901e3",
             "actions": [
                 {
-                    "name": "DIrectiuons",
-                    "type": "Value",
-                    "id": "674c0ff5-c97a-4c30-8c8f-4a0f528860e5",
+                    "name": "Up",
+                    "type": "Button",
+                    "id": "6c114c76-7f62-4ff7-83fe-503595b144e8",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Down",
+                    "type": "Button",
+                    "id": "c3ea2e78-0006-4e28-b981-caf545f3f435",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Left",
+                    "type": "Button",
+                    "id": "19d131bf-e48d-4e3c-b12a-63c33bad5bbe",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Right",
+                    "type": "Button",
+                    "id": "9a5f5900-648b-444b-854a-046dea9171e3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
-                    "name": "2D Vector",
-                    "id": "09658512-7bbc-4d1a-8877-5816c5739579",
-                    "path": "2DVector",
+                    "name": "",
+                    "id": "bbd0edb7-4e29-45b8-8776-c36d7fade3c2",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "DIrectiuons",
-                    "isComposite": true,
+                    "action": "Up",
+                    "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
-                    "id": "9c44ea37-bf3f-455e-a1c1-d908d44e47be",
-                    "path": "<HID::SHANWAN USB DancePad>/trigger",
+                    "name": "",
+                    "id": "ddf0c5a2-0c77-43cc-a9d3-16e2dc8c0189",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "DIrectiuons",
+                    "action": "Down",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 },
                 {
-                    "name": "down",
-                    "id": "48f4496d-8886-4ef2-b8fb-0ff77dd8c0fe",
-                    "path": "<HID::SHANWAN USB DancePad>/button2",
+                    "name": "",
+                    "id": "29427b1d-e58c-4975-941d-8258b7daabb1",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "DIrectiuons",
+                    "action": "Left",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 },
                 {
-                    "name": "left",
-                    "id": "9613ddcc-4c33-4f06-9f5f-fb7616d00fb9",
-                    "path": "<HID::SHANWAN USB DancePad>/button3",
+                    "name": "",
+                    "id": "653be762-7630-419b-9953-e4d6925c8cca",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "DIrectiuons",
+                    "action": "Right",
                     "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "e71117f8-2c09-4f21-bc31-e51bf92e27a9",
-                    "path": "<HID::SHANWAN USB DancePad>/button4",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "DIrectiuons",
-                    "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 }
             ]
         }
