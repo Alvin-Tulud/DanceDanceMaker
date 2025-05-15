@@ -56,8 +56,30 @@
                 },
                 {
                     "name": "",
+                    "id": "869a72b2-636d-4d6e-824d-16f42a49c45a",
+                    "path": "<Joystick>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "ddf0c5a2-0c77-43cc-a9d3-16e2dc8c0189",
                     "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "933e7206-972b-4533-9b7a-eba045f81dda",
+                    "path": "<HID::SHANWAN USB DancePad>/button2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -78,8 +100,30 @@
                 },
                 {
                     "name": "",
+                    "id": "ac3b9827-0d7e-47fb-ac41-b17859917dc6",
+                    "path": "<HID::SHANWAN USB DancePad>/button3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "653be762-7630-419b-9953-e4d6925c8cca",
                     "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4a13782c-00fe-49f2-9ff0-2be95cc59a4b",
+                    "path": "<HID::SHANWAN USB DancePad>/button4",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
